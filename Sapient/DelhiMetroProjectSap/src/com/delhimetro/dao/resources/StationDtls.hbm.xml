@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- Package name which contains the domain classes -->
+<hibernate-mapping package="com.delhimetro.dao.entity">
+
+	<class name="StationDtls" table="TL_Station_Dtls">
+		<id name="id">
+			<generator class="native" />
+		</id>
+
+
+		<property name="stationCode" type="String">
+			<column name="Station_Code" length="10" />
+		</property>
+
+
+		<property name="stationName" type="String">
+			<column name="Statio_Name" length="10" />
+		</property>
+
+
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Delhi Metro Project -->
+<hibernate-mapping>
+    <class name="com.delhimetro.dao.entity.MetroSmartCard" table="TL_METRO_SMARTCARD">
+        <id name="smartCordId" type="java.lang.Integer">
+            <column name="smartCord_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="smartCardNumber" type="string">
+            <column name="SMARTCARD_NUMBER" length="16" not-null="true" unique="true" />
+        </property>
+        <property name="balanceAmount" type="big_decimal">
+            <column name="Balance_Amount"  not-null="true" />
+        </property>
+        <set name="dailytravelDetails" table="TL_TRAVEL_DTLS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TRAVEL_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.delhimetro.dao.entity.DailytravelDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

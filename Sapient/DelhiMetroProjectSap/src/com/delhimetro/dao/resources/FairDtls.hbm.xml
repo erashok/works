@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- Package name which contains the domain classes -->
+<hibernate-mapping package="com.delhimetro.dao.entity">
+
+<class name="FairDtls" table="TL_Fair_Dtls">
+         <id name="id">
+                <generator class="native"/>
+         </id>
+          
+         <property name="DaysType" type="String">
+			<column name="WEEK_DAYS" length="10" />
+		</property>
+		
+		<property name="amount" type="big_decimal">
+			<column name="Amount" />
+		</property>
+          
+          
+</class> 
+	
+</hibernate-mapping>
